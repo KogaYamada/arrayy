@@ -1,16 +1,10 @@
 {
-  "name": "arrays",
+  "name": "arrayy",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "build/index.js",
+  "author": "KogaYamada <koga0087y@gmail.com>",
+  "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "concurrently": "^5.2.0",
-    "nodemon": "^2.0.4"
+    "start": "node build/index.js"
   }
 }
