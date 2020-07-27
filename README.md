@@ -21,6 +21,8 @@ https://www.npmjs.com/package/arrayy
 ## arrShuffle
 `const newArr = arrShuffle(array)`
 <br >
+指定した配列の中身をシャッフルします。
+<br >
 ### 引数
 #### array
 対象となる配列
