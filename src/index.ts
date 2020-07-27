@@ -3,7 +3,7 @@ export const arrRandom = <T>(arr: T[], quantity: number): T[] => {
     throw new Error();
   }
   let newArr: T[] = [];
-  let copyArr: T[] = arr.map((el: T) => el);
+  let copyArr: T[] = arr.concat();
   while (newArr.length < quantity) {
     const randomNum: number = Math.floor(Math.random() * copyArr.length);
     newArr.push(copyArr[randomNum]);
@@ -14,7 +14,7 @@ export const arrRandom = <T>(arr: T[], quantity: number): T[] => {
 
 export const arrShuffle = <T>(arr: T[]): T[] => {
   let newArr: T[] = [];
-  let copyArr: T[] = arr.map((el: T) => el);
+  let copyArr: T[] = arr.concat();
   while (copyArr.length) {
     const randomNum: number = Math.floor(Math.random() * copyArr.length);
     newArr.push(copyArr[randomNum]);
