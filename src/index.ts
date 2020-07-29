@@ -1,4 +1,4 @@
-export const arrRandom = <T>(arr: T[], quantity: number): T[] => {
+export const arrRandom = <T>(arr: T[], quantity: number): [T[], T[]] => {
   if (arr.length < quantity) {
     throw new Error();
   }
@@ -9,7 +9,7 @@ export const arrRandom = <T>(arr: T[], quantity: number): T[] => {
     newArr.push(copyArr[randomNum]);
     copyArr.splice(randomNum, 1);
   }
-  return newArr;
+  return [newArr, copyArr];
 };
 
 export const arrShuffle = <T>(arr: T[]): T[] => {
