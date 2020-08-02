@@ -1,4 +1,4 @@
-# arrayy
+# arrayy 1.1.1
 
 https://www.npmjs.com/package/arrayy
 <br >
