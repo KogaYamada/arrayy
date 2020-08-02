@@ -5,10 +5,17 @@
   "author": "KogaYamada <koga0087y@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node build/index.js"
+    "start": "node build/index.js",
+    "test": "jest --watch *.ts"
   },
   "repository": {
     "url": "https://github.com/KogaYamada/arrayy",
     "type": "git"
-  }
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.8",
+    "jest": "^26.2.2",
+    "ts-jest": "^26.1.4"
+  },
+  "dependencies": {}
 }
