@@ -1,4 +1,4 @@
-import { randomPick, shuffle } from '../index';
+import { randomPick, shuffle } from '../src/index';
 
 const arrayMock = [
   { title: 'カード1', id: '1' },
