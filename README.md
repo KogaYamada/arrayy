@@ -7,7 +7,7 @@ https://www.npmjs.com/package/arrayy
 
 ## randomPick
 
-`const [newArray, otherElements] = getRandom(array, quantity)`
+`const [newArray, otherElements] = randomPick(array, quantity)`
 <br >
 指定した配列からランダムに値を n 個取得します。
 <br >
