@@ -33,6 +33,7 @@ otherElements:引数(array)から引数の要素を取り除いた配列
 ## shuffle
 
 `const newArray = shuffle(array)`
+
 <br >
 指定した配列の中身をシャッフルします。
 <br >
