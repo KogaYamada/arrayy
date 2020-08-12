@@ -1,37 +1,81 @@
 import { randomPick, shuffle } from '../src/index';
+import { objArray, strArray, numArray, arrArray } from './dummy';
 
-const arrayMock = [
-  { title: 'カード1', id: '1' },
-  { title: 'カード2', id: '2' },
-  { title: 'カード3', id: '3' },
-  { title: 'カード4', id: '4' },
-  { title: 'カード5', id: '5' },
-  { title: 'カード6', id: '6' },
-  { title: 'カード7', id: '7' },
-  { title: 'カード8', id: '8' },
-  { title: 'カード9', id: '9' },
-  { title: 'カード10', id: '10' },
-  { title: 'カード11', id: '11' },
-  { title: 'カード12', id: '12' },
-  { title: 'カード13', id: '13' },
-  { title: 'カード14', id: '14' },
-  { title: 'カード15', id: '15' },
-  { title: 'カード16', id: '16' },
-  { title: 'カード17', id: '17' },
-  { title: 'カード18', id: '18' },
-  { title: 'カード19', id: '19' },
-  { title: 'カード20', id: '20' },
-];
+const pick = 3;
+describe('randomPickのテスト', () => {
+  test('文字列の配列のテスト', () => {
+    const [pickResult, notPickResult] = randomPick(strArray, pick);
+    expect(pickResult).toHaveLength(pick);
+    expect(notPickResult).toHaveLength(strArray.length - pick);
+  });
 
-it('randomPickのテスト', () => {
-  const pick = 3;
-  const [pickResult, notPickResult] = randomPick(arrayMock, pick);
+  test('数字の配列のテスト', () => {
+    const [pickResult, notPickResult] = randomPick(numArray, pick);
+    expect(pickResult).toHaveLength(pick);
+    expect(notPickResult).toHaveLength(numArray.length - pick);
+  });
 
-  expect(pickResult.length).toEqual(pick);
-  expect(notPickResult.length).toEqual(arrayMock.length - pick);
+  test('二次元配列のテスト', () => {
+    const [pickResult, notPickResult] = randomPick(arrArray, pick);
+    expect(pickResult).toHaveLength(pick);
+    expect(notPickResult).toHaveLength(arrArray.length - pick);
+  });
+
+  test('オブジェクトの配列のテスト', () => {
+    const [pickResult, notPickResult] = randomPick(objArray, pick);
+    expect(pickResult).toHaveLength(pick);
+    expect(notPickResult).toHaveLength(objArray.length - pick);
+  });
 });
 
-it('shuffleのテスト', () => {
-  const result = shuffle(arrayMock);
-  expect(result.length).toEqual(arrayMock.length);
+/** ランダムになっているかを確認する係数 */
+const randomCoefficient = 0.25;
+describe('shuffleのテスト', () => {
+  test('文字列の配列のテスト', () => {
+    /** ランダムになっているかの指標 */
+    const randomIndex = Math.floor(strArray.length * randomCoefficient);
+    for (let i = 0; i < 10; i++) {
+      /** ランダムできていない(要素のindex番号が変わっていない)数 */
+      const result = shuffle(strArray).filter((el, index) => {
+        return el === strArray[index];
+      }).length;
+      expect(result).toBeLessThanOrEqual(randomIndex);
+    }
+  });
+
+  test('数字の配列のテスト', () => {
+    /** ランダムになっているかの指標 */
+    const randomIndex = Math.floor(numArray.length * randomCoefficient);
+    for (let i = 0; i < 10; i++) {
+      /** ランダムできていない(要素のindex番号が変わっていない)数 */
+      const result = shuffle(numArray).filter((el, index) => {
+        return el === numArray[index];
+      }).length;
+      expect(result).toBeLessThanOrEqual(randomIndex);
+    }
+  });
+
+  test('二次元配列のテスト', () => {
+    /** ランダムになっているかの指標 */
+    const randomIndex = Math.floor(arrArray.length * randomCoefficient);
+    for (let i = 0; i < 10; i++) {
+      /** ランダムできていない(要素のindex番号が変わっていない)数 */
+      const result = shuffle(arrArray).filter((el, index) => {
+        return el === arrArray[index];
+      }).length;
+      expect(result).toBeLessThanOrEqual(randomIndex);
+    }
+  });
+
+  test('オブジェクトの配列のテスト', () => {
+    /** ランダムになっているかの指標 */
+    const randomIndex = Math.floor(objArray.length * randomCoefficient);
+    for (let i = 0; i < 10; i++) {
+      /** ランダムできていない(要素のindex番号が変わっていない)数 */
+      const result = shuffle(objArray).filter((el, index) => {
+        return el === objArray[index];
+      }).length;
+      expect(result).toBeLessThanOrEqual(randomIndex);
+    }
+  });
 });

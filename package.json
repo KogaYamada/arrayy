@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node build/index.js",
-    "test": "jest --watch *.ts"
+    "test": "jest --watch /tests/index.test.ts"
   },
   "repository": {
     "url": "https://github.com/KogaYamada/arrayy",
