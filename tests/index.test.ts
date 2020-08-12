@@ -31,7 +31,7 @@ it('randomPickのテスト', () => {
   expect(notPickResult.length).toEqual(arrayMock.length - pick);
 });
 
-it('shuffle', () => {
+it('shuffleのテスト', () => {
   const result = shuffle(arrayMock);
   expect(result.length).toEqual(arrayMock.length);
 });
