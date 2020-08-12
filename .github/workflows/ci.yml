@@ -1,0 +1,12 @@
+name: Module-Testing
+on: push
+
+jobs:
+  test_project:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run Django unit tests
+        run: |
+          npm install
+          npm test
