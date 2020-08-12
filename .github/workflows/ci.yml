@@ -9,4 +9,4 @@ jobs:
       - name: Run Jest unit tests
         run: |
           yarn install
-          yarn jest
+          jest
