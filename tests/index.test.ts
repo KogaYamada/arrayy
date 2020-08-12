@@ -28,4 +28,10 @@ it('randomPickのテスト', () => {
   const [pickResult, notPickResult] = randomPick(arrayMock, pick);
 
   expect(pickResult.length).toEqual(pick);
+  expect(notPickResult.length).toEqual(arrayMock.length - pick);
+});
+
+it('shuffle', () => {
+  const result = shuffle(arrayMock);
+  expect(result.length).toEqual(arrayMock.length);
 });
