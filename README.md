@@ -43,7 +43,5 @@ const newArray = arrShuffle(array);
 
 #### newArr
 
-- 引数(array)の要素の index をランダムに入れ替えた新しい配列
+- 引数(array)の要素の index をランダムに入れ替えた新しい配列.
   <br />
-  re
-  rere
