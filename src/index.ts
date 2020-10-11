@@ -24,5 +24,5 @@ export const shuffle = <T>(arr: T[]): T[] => {
 };
 
 const fn = (n: number) => {
-  return n * 2;
+  return n * 21;
 };
