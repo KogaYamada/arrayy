@@ -23,6 +23,6 @@ export const shuffle = <T>(arr: T[]): T[] => {
   return newArr;
 };
 
-const fn = () => {
-  return 2;
+const fn = (n: number) => {
+  return n * 2;
 };
