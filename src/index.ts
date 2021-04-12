@@ -20,7 +20,6 @@ export const shuffle = <T>(arr: T[]): T[] => {
     newArr.push(copyArr[randomNum]);
     copyArr.splice(randomNum, 1);
   }
-  console.log('hello');
   return newArr;
 };
 
